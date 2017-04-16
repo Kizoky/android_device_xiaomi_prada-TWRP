@@ -1,0 +1,4 @@
+ro.sf.lcd_density=320
+ro.hardware.keystore=msm8937
+persist.sys.usb.config=mtp,adb
+persist.fuse_sdcard=true
