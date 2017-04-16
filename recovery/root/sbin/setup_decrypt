@@ -78,12 +78,14 @@ cp -f "$lib/libQSEEComAPI.so"   /vendor/lib64/
 chmod 0750 /sbin/qseecomd
 
 # we have to link qseecomd to /sbin/linker64 because /system is unmounted when it starts
-sed -i "s|/system/bin/linker|///////sbin/linker|" /sbin/qseecomd
+sed -i "s|/sbin/linker|///////sbin/linker|" /sbin/qseecomd
 
 setprop ro.crypto.using_system_libs 1
 
 log "Using system decryption libraries!"
 
 restart_crypto
+
+umount /system
 
 exit 0

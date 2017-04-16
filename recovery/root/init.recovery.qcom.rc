@@ -1,8 +1,12 @@
+# Permissions
 on init
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+
+on early-fs
+    start setup-decrypt	
 
 on boot
     # save battery by switching to interactive once booted
@@ -23,3 +27,10 @@ service sbinqseecomd /sbin/qseecomd
 
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
+	
+service setup-decrypt /sbin/setup_decrypt
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
