@@ -25,6 +25,13 @@ restart_crypto() {
 	}
 }
 
+mountpoint -q /system || {
+	mkdir -p /system
+	log "Mounting /system read-only"
+	mount -t ext4 -o ro /dev/block/bootdevice/by-name/system /system
+}
+mountpoint -q /system || abort "Could not mount /system for crypto libs!"
+
 bin=/system/bin
 lib=/system/vendor/lib64
 hw=$lib/hw
@@ -50,7 +57,23 @@ done
 
 $ready || abort "Missing one or more decryption libraries!"
 
+mkdir -p /vendor/lib64/hw/
+
 log "Copying decryption libraries from /system"
+cp -f \
+	"$bin/qseecomd" \
+	"$hw/keystore.msm8937.so" \
+	"$lib/libQSEEComAPI.so" \
+	"$lib/libdiag.so" \
+	"$lib/libdrmfs.so" \
+	"$lib/libdrmtime.so" \
+	"$lib/librpmb.so" \
+	"$lib/libssd.so" \
+	"$lib/libtime_genoff.so" \
+	/sbin/
+
+cp -f "$hw/keystore.msm8937.so" /vendor/lib64/hw/
+cp -f "$lib/libQSEEComAPI.so"   /vendor/lib64/
 
 chmod 0750 /sbin/qseecomd
 
