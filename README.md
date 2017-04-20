@@ -5,7 +5,7 @@ Add to `.repo/local_manifests/prada.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<project path="device/xiaomi/prada" name="android_device_xiaomi_prada" remote="Kizoky" revision="android-6.0" />
+	<project path="device/xiaomi/prada" name="android_device_xiaomi_prada" remote="Kizoky" revision="master" />
 </manifest>
 ```
 Then run `repo sync` to download the git.
