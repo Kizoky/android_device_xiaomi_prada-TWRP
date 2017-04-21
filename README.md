@@ -33,5 +33,5 @@ Kernel sources for Prada is still not released by Xiaomi.
 
 Bugs:
 ```xml
--Can't decrypt already existing internal storage with data on it
+-Can't decrypt already existing internal storage with data on it (Fix: wipe internal storage)
 ```
