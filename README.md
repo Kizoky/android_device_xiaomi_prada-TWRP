@@ -30,9 +30,3 @@ make -j1 recoveryimage
 Building takes approx. 10-11 minutes (It depends on your CPU, and how many cores you use to build)
 
 Kernel sources for Prada is still not released by Xiaomi.
-
-Bugs:
-```xml
--Can't decrypt internal storage
-Most likely missing flags or misconfigured config file
-```
