@@ -1,4 +1,21 @@
-## TWRP device tree for Xiaomi Redmi 4 (prada)
+Device configuration for Xiaomi Redmi 4(prada).
+==================================================
+
+Basic   | Spec Sheet
+-------:|:-------------------------
+CPU     | Quad-core 1.4 GHz ARM® Cortex™ A53 
+CHIPSET | Qualcomm MSM8937 Snapdragon 430
+GPU     | Adreno 505
+Memory  | 16GB ROM: 2GB RAM.
+Shipped Android Version | 6.0.1
+Storage | 16GB
+Battery | 4100 mAh
+Display | 720 x 1280 pixels, 5.0" 
+Rear Camera  | 13 MP, 4128 x 3096 pixels, autofocus
+Front Camera | 5.0 MP
+
+![Xiaomi Redmi 4](http://cdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-4-1.jpg "Xiaomi Redmi 4")
+
 
 Add to `.repo/local_manifests/prada.xml`:
 
@@ -19,13 +36,8 @@ To build:
 . build/envsetup.sh
 lunch omni_prada-eng
 ```
-Jx (x is how many cores your CPU have)
 ```sh
 make -j4 recoveryimage
-```
-If you are unsure, just build it with 1 core only
-```sh
-make -j1 recoveryimage
 ```
 Building takes approx. 10-11 minutes (It depends on your CPU, and how many cores you use to build)
 
