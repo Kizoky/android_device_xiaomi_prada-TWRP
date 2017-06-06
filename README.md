@@ -3,12 +3,12 @@ Device configuration for Xiaomi Redmi 4(prada).
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Quad-core 1.4 GHz ARM® Cortex™ A53 
+CPU     | Octa-core 1.4 GHz ARM® Cortex™ A53 
 CHIPSET | Qualcomm MSM8937 Snapdragon 430
 GPU     | Adreno 505
-Memory  | 16GB ROM: 2GB RAM.
+Memory  | 2GB RAM
 Shipped Android Version | 6.0.1
-Storage | 16GB
+Storage | 16GB, 9-11GB usable
 Battery | 4100 mAh
 Display | 720 x 1280 pixels, 5.0" 
 Rear Camera  | 13 MP, 4128 x 3096 pixels, autofocus
