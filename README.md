@@ -1,6 +1,8 @@
 Device configuration for Xiaomi Redmi 4(prada).
 ==================================================
 
+To do: -Use latest kernel from latest Stable ROM (Stable ROM released later than Dev ROM)
+
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Octa-core 1.4 GHz ARM® Cortex™ A53 
