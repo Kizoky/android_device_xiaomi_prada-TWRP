@@ -43,4 +43,7 @@ make -j4 recoveryimage
 ```
 Building takes approx. 10-11 minutes (It depends on your CPU, and how many cores you use to build)
 
+In case of building errors:
+```Remove ../frameworks/native-caf```
+
 Kernel sources for Prada is still not released by Xiaomi.
