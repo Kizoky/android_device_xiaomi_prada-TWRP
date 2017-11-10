@@ -55,8 +55,8 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
+#TARGET_USERIMAGES_USE_EXT4 := true
+#TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -64,9 +64,9 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_DEFAULT_BRIGHTNESS := 80
 TW_DEFAULT_EXTERNAL_STORAGE := true
-TW_INCLUDE_SUPERSU := true
-TW_INCLUDE_NTFS_3G := true
-TW_IGNORE_MISC_WIPE_DATA := true
+#TW_INCLUDE_SUPERSU := true
+#TW_INCLUDE_NTFS_3G := true
+#TW_IGNORE_MISC_WIPE_DATA := true
 
 # Fix for Internal storage
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -82,10 +82,10 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXTRA_LANGUAGES := true
 
 # Encryption support
-TARGET_CRYPTFS_HW_PATH := device/xiaomi/prada/cryptfs_hw
+#TARGET_CRYPTFS_HW_PATH := device/xiaomi/prada/cryptfs_hw
 TW_INCLUDE_CRYPTO := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+#TARGET_HW_DISK_ENCRYPTION := true
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
