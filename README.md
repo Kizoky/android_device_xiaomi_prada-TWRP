@@ -47,3 +47,10 @@ In case of building errors:
 ```Remove ../frameworks/native-caf```
 
 Kernel sources for Prada is still not released by Xiaomi.
+
+```
+I:Actual block device: '/dev/block/mmcblk0p59', current file system: 'ext4'
+get_crypt_ftr_info crypto key location: '/dev/block/bootdevice/by-name/bk1'
+Cannot read real block device footer
+Could not mount /data and unable to find crypto footer.
+```
