@@ -8,29 +8,19 @@ on boot
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1781000
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "40 1183000:50 1469000:60 1625000:70"
 
-on init
-    chmod 0660 /dev/qseecom
-    chown system drmrpc /dev/qseecom
+on fs
+    # Needed to make qseecomd work in recovery
+    chmod 0777 /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
 
-on early-fs
-    start setup-decrypt	
-
-service setup-decrypt /sbin/setup_decrypt
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
-# Encryption support test
-service qseecomd /sbin/qseecomd
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
 on property:ro.crypto.state=encrypted
-    start qseecomd
+    start sbinqseecomd
+
+# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
+service sbinqseecomd /sbin/qseecomd
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
