@@ -45,6 +45,20 @@ Building takes approx. 10-11 minutes (It depends on your CPU, and how many cores
 
 In case of building errors:
 ```Remove ../frameworks/native-caf```
+Edit external/lz4/Android.mk, and replace liblz4 and liblz4-static with this:
+```
+include $(CLEAR_VARS)
+LOCAL_MODULE := liblz4-static
+LOCAL_SRC_FILES := $(liblz4_src_files)
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := liblz4
+LOCAL_SRC_FILES := $(liblz4_src_files)
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_STATIC_LIBRARY)
+```
 
 Kernel sources for Prada is still not released by Xiaomi.
 
